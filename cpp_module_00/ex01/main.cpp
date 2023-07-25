@@ -6,7 +6,7 @@
 /*   By: muyazici <muyazici@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 13:45:07 by muyazici          #+#    #+#             */
-/*   Updated: 2023/07/25 16:36:41 by muyazici         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:19:56 by muyazici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@ void	Add(PhoneBook *pb)
 {
 	std::string input;
 	pb->counter = pb->counter % 8;
-    if(pb->filled < 8) {
-        pb->filled++;
-    }
     std::cout << "\033[1;92mPerson Informations\033[0m" << std::endl;
     std::cout << "Name: ";
     std::getline(std::cin, input);
@@ -35,11 +32,18 @@ void	Add(PhoneBook *pb)
     std::cout << "Secret: ";
     std::getline(std::cin, input);
 	pb->contacts[pb->counter].setsecret(input);
-    if (pb->contacts[pb->counter].getName().empty() || pb->contacts[pb->counter].getsurName().empty() || pb->contacts[pb->counter].getnickName().empty())
+    if (pb->contacts[pb->counter].getName().empty() || pb->contacts[pb->counter].getsurName().empty() ||
+		pb->contacts[pb->counter].getnickName().empty() || pb->contacts[pb->counter].getsecret().empty() ||
+		pb->contacts[pb->counter].getnum().empty())
 	{
-		return ;
+		return;
 	}
-    pb->counter++;
+	else
+	{
+		if(pb->filled < 8)
+			pb->filled++;
+	}
+	pb->counter++;
 }
 
 void	Search(PhoneBook *pb)
