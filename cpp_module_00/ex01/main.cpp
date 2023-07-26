@@ -19,30 +19,46 @@ void	Add(PhoneBook *pb)
     std::cout << "\033[1;92mPerson Informations\033[0m" << std::endl;
     std::cout << "Name: ";
     std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Name cannot be empty" << std::endl;
+		return;
+	}
 	pb->contacts[pb->counter].setName(input);
     std::cout << "Surname: ";
     std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Surname cannot be empty" << std::endl;
+		return;
+	}
 	pb->contacts[pb->counter].setsurName(input);
     std::cout << "Nickname: ";
     std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Nickname cannot be empty" << std::endl;
+		return;
+	}
 	pb->contacts[pb->counter].setnickName(input);
     std::cout << "Phone Number: ";
     std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Phone number cannot be empty" << std::endl;
+		return;
+	}
 	pb->contacts[pb->counter].setnum(input);
     std::cout << "Secret: ";
     std::getline(std::cin, input);
-	pb->contacts[pb->counter].setsecret(input);
-    if (pb->contacts[pb->counter].getName().empty() || pb->contacts[pb->counter].getsurName().empty() ||
-		pb->contacts[pb->counter].getnickName().empty() || pb->contacts[pb->counter].getsecret().empty() ||
-		pb->contacts[pb->counter].getnum().empty())
+	if (input.empty())
 	{
+		std::cout << "Secret cannot be empty" << std::endl;
 		return;
 	}
-	else
-	{
-		if(pb->filled < 8)
-			pb->filled++;
-	}
+	pb->contacts[pb->counter].setsecret(input);
+	if(pb->filled < 8)
+		pb->filled++;
 	pb->counter++;
 }
 
