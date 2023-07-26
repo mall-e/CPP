@@ -1,6 +1,6 @@
 NAME = BraiiiiiiinnnzzzZ
 CC = c++
-CLAFGS = -Wall -Wextra -Werror
+CLAFGS = -Wall -Wextra -Werror -std=c++98
 SRCS = *.cpp
 OBJ = $(SRCS:.cpp = .o)
 
