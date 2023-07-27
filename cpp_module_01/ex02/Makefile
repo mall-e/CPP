@@ -1,4 +1,4 @@
-NAME = phone
+NAME = HiThisIsBrain
 CC = c++
 CLAFGS = -Wall -Wextra -Werror -std=c++98
 SRCS = *.cpp
@@ -16,3 +16,5 @@ clean:
 fclean: clean
 
 re: fclean all
+
+.PHONY: all clean fclean re
