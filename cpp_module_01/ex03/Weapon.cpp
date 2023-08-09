@@ -2,9 +2,9 @@
 
 Weapon::Weapon() {}
 
-Weapon::Weapon(std::string ntitle)
+Weapon::Weapon(std::string title)
 {
-    title = ntitle;
+    type = title;
 }
 
 Weapon::~Weapon() {}
