@@ -36,12 +36,12 @@ std::ostream& operator<<(std::ostream& os, const Fixed& cs){
 }
 
 int Fixed::getRawBits() const{
-    std::cout << "getRawBits member function called" << std::endl;
+    //std::cout << "getRawBits member function called" << std::endl;
     return (raw);
 }
 
 void Fixed::setRawBits(const int raw) {
-    std::cout << "setRawBits called" << std::endl;
+    //std::cout << "setRawBits called" << std::endl;
     this->raw = raw;
 }
 
