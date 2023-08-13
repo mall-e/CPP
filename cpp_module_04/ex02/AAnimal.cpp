@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
 Animal::Animal()
 {
@@ -12,7 +12,7 @@ Animal::~Animal()
 
 Animal::Animal(const Animal& rhs)
 {
-	std::cout << "Animal Coppy Constructor Called!" << std::endl;
+	std::cout << "Animal Coppy Constructor Called!" << std::endl; 
 	*this = rhs;
 }
 
@@ -22,14 +22,11 @@ Animal&	Animal::operator=(const Animal& rhs)
 	return (*this);
 }
 
-std::string Animal::getType( void ) const
+std::string	Animal::getType(void) const
 {
-	return (type);
+	return (this->type);
 }
 
-void     Animal::setType(std::string type)
+void	Animal::makeSound(void) const
 {
-    this->type = type;
 }
-
-void	Animal::makeSound(void) const {}
